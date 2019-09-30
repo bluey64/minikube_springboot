@@ -41,6 +41,16 @@ spec:
           value: "true"
         - name: DD_JMXFETCH_STATSD_PORT
           value: '8125'
+        - name: DD_TRACE_ANALYTICS_ENABLED
+          value: "true"
+        - name: DD_TRACE_GLOBAL_TAGS
+          value: "env:dev"
+        - name: DD_LOGS_INJECTION
+          value: "true"
+        - name: DOGSTATSD_HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
 ---
 apiVersion: v1
 kind: Service
